@@ -4,10 +4,10 @@ import ReadMoreButton from './readMoreButton';
 
 function App(props) {
     return (
-        <div>
+        <div style={{width: '50%'}}>
             <h3>{props.title}</h3>
             <div>{props.children}</div>
-            <div>
+            <div style={{position: "relative"}}>
                 <ReadMoreButton />
             </div>
         </div>

@@ -4,7 +4,7 @@ import SectionCard from '../shared/sections/card';
 
 function Blog() {
     return (
-        <SectionContainer title="NOTICIAS">
+        <SectionContainer title="BLOG">
             <SectionCard
                 cover="https://federaciondecafeteros.org/app/uploads/2020/07/Tapabocas-575x334.jpg"
                 title="Foro Mundial de Productores de Café resalta trabajo conjunto para hacer frente a covid-19"
