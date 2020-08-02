@@ -11,7 +11,6 @@ function News() {
         if (news.length > 0) return;
         getNews().then((data) => {
             setNews(data);
-            console.log(data)
         }).catch((error) => {
             console.error(error);
         })
