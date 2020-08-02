@@ -11,7 +11,6 @@ function Blog() {
         if (posts.length > 0) return;
         getPosts().then((data) => {
             setPosts(data);
-            console.log(data)
         }).catch((error) => {
             console.error(error);
         })
