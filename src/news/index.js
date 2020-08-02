@@ -18,7 +18,7 @@ function News() {
     })
 
     return (
-        <SectionContainer title="NOTICIAS">
+        <SectionContainer title="NOTICIAS" url="https://federaciondecafeteros.org/listado-noticias/">
             {news.map((newsItem, index) => <SectionCard key={index}
                 cover={newsItem.cover}
                 title={newsItem.title}

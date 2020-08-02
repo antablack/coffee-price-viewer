@@ -1,13 +1,13 @@
 import React from 'react';
-//import './price.scss';
+import './readMoreButton.scss';
 
 function ReadMoreButton(props) {
     return (
-        <button style={{backgroundColor: '#456990', border: 'none', borderRadius: '10px', padding: "10px", color: 'white', position: "absulte", float: "right", marginRight: "90px"}}>
+        <a href={props.url} target="_blank" className="readmore">
            <span>
                 Leer mas
            </span>
-        </button>
+        </a>
     );
 }
 

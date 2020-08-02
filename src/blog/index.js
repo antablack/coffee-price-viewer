@@ -18,7 +18,7 @@ function Blog() {
     })
 
     return (
-        <SectionContainer title="BLOG">
+        <SectionContainer title="BLOG" url="https://federaciondecafeteros.org/wp/blog/">
             {posts.map((newsItem, index) => <SectionCard key={index}
                 cover={newsItem.cover}
                 title={newsItem.title}

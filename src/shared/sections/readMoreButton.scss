@@ -1,0 +1,18 @@
+.readmore {
+    background-color: #456990; 
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    position: absulte;
+    float: right;
+    margin-right: 90px;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .readmore {
+        margin-right: 10px;
+    }
+}

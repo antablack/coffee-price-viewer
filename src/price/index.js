@@ -16,7 +16,7 @@ function App() {
     })
 
     return (
-        <div className="App" style={{ marginTop: "30px" }}>
+        <div className="App" style={{ marginTop: "30px", textAlign: "center" }}>
             <h4>PRECIO DEL CAFE A {priceData.date}</h4>
             <Item price={priceData.price} currency="COP*" description="Carga de cafe (125kg)" />
             <Item price={priceData.dollar} currency="USD" description="Tasa de cambio" />

@@ -1,0 +1,13 @@
+.sections{
+    width: 50%;
+    margin-bottom: 50px;
+}
+
+.sections_readmore{
+    position: "relative"
+}
+@media (max-width: 768px) {
+    .sections{
+        width: 90%;
+    }
+}
