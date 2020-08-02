@@ -1,17 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SectionContainer from '../shared/sections/container';
 import SectionCard from '../shared/sections/card';
+import { getPosts } from '../services';
 
 function Blog() {
+
+    //https://allorigins.win/
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        if (posts.length > 0) return;
+        getPosts().then((data) => {
+            setPosts(data);
+            console.log(data)
+        }).catch((error) => {
+            console.error(error);
+        })
+    })
+
     return (
         <SectionContainer title="BLOG">
-            <SectionCard
-                cover="https://federaciondecafeteros.org/app/uploads/2020/07/Tapabocas-575x334.jpg"
-                title="Foro Mundial de Productores de Café resalta trabajo conjunto para hacer frente a covid-19"
-                date="julio 29, 2020"
-                description="Con más de mil participantes de diferentes países."
-                url="https://federaciondecafeteros.org/wp/listado-noticias/foro-mundial-de-productores-de-cafe-resalta-trabajo-conjunto-para-hacer-frente-a-covid-19/"
-            />
+            {posts.map((newsItem, index) => <SectionCard key={index}
+                cover={newsItem.cover}
+                title={newsItem.title}
+                date={newsItem.date}
+                description={newsItem.description}
+                url={newsItem.url} />)}
         </SectionContainer>
     );
 }

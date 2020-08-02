@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './price.scss';
 import Item from './item';
-import {getPrice} from '../services';
+import { getPrice } from '../services';
 
 function App() {
     //https://allorigins.win/
     const [priceData, setPriceData] = useState({});
     useEffect(() => {
+        if (priceData.date) return;
         getPrice().then((data) => {
             setPriceData(data);
         }).catch((error) => {

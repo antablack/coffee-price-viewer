@@ -3,7 +3,7 @@ import './card.scss';
 
 function Card(props) {
     return (
-        <a href={props.url} className="card">
+        <a href={props.url} target="_blank" className="card">
             <div className="card__cover">
                 <img src={props.cover} />
             </div>

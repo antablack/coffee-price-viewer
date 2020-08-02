@@ -1,31 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import SectionContainer from '../shared/sections/container';
 import SectionCard from '../shared/sections/card';
+import { getNews } from '../services';
 
 function News() {
+
+    //https://allorigins.win/
+    const [news, setNews] = useState([]);
+    useEffect(() => {
+        if (news.length > 0) return;
+        getNews().then((data) => {
+            setNews(data);
+            console.log(data)
+        }).catch((error) => {
+            console.error(error);
+        })
+    })
+
     return (
         <SectionContainer title="NOTICIAS">
-            <SectionCard
-                cover="https://federaciondecafeteros.org/app/uploads/2020/07/Tapabocas-575x334.jpg"
-                title="Foro Mundial de Productores de Café resalta trabajo conjunto para hacer frente a covid-19"
-                date="julio 29, 2020"
-                description="Las áreas a renovar en Colombia en los próximos años¿Cuántas hectáreas de café debe renovar Colombia cada año?  ¿Es un cifra con definiciones tecnológicas iguales para todo un país?. Las respuestas deben hacer parte de un ejercicio serio de planificación y que por supuesto c…"
-                url="https://federaciondecafeteros.org/wp/listado-noticias/foro-mundial-de-productores-de-cafe-resalta-trabajo-conjunto-para-hacer-frente-a-covid-19/"
-            />
-            <SectionCard
-                cover="https://federaciondecafeteros.org/app/uploads/2020/07/Tapabocas-575x334.jpg"
-                title="Foro Mundial de Productores de Café resalta trabajo conjunto para hacer frente a covid-19"
-                date="julio 29, 2020"
-                description="Las áreas a renovar en Colombia en los próximos años¿Cuántas hectáreas de café debe renovar Colombia cada año?  ¿Es un cifra con definiciones tecnológicas iguales para todo un país?. Las respuestas deben hacer parte de un ejercicio serio de planificación y que por supuesto c…"
-                url="https://federaciondecafeteros.org/wp/listado-noticias/foro-mundial-de-productores-de-cafe-resalta-trabajo-conjunto-para-hacer-frente-a-covid-19/"
-            />
-            <SectionCard
-                cover="https://federaciondecafeteros.org/app/uploads/2020/07/Tapabocas-575x334.jpg"
-                title="Foro Mundial de Productores de Café resalta trabajo conjunto para hacer frente a covid-19"
-                date="julio 29, 2020"
-                description="Las áreas a renovar en Colombia en los próximos años¿Cuántas hectáreas de café debe renovar Colombia cada año?  ¿Es un cifra con definiciones tecnológicas iguales para todo un país?. Las respuestas deben hacer parte de un ejercicio serio de planificación y que por supuesto c…"
-                url="https://federaciondecafeteros.org/wp/listado-noticias/foro-mundial-de-productores-de-cafe-resalta-trabajo-conjunto-para-hacer-frente-a-covid-19/"
-            />
+            {news.map((newsItem, index) => <SectionCard key={index}
+                cover={newsItem.cover}
+                title={newsItem.title}
+                date={newsItem.date}
+                description={newsItem.description}
+                url={newsItem.url} />)}
         </SectionContainer>
     );
 }
