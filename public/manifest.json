@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Precio del cafe viewer",
+  "name": "Precio del cafe viewer",
   "icons": [
     {
       "src": "favicon.ico",
